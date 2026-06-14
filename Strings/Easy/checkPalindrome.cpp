@@ -7,7 +7,7 @@ int main(){
     string s;
     cin>>s;
     string s1=s;
-    reverse(s1.begin(),s.end());
+    reverse(s1.begin(),s1.end());
     if(s1==s){
         cout<<"True";
     }

@@ -1,23 +1,25 @@
+// Anagrams are two strings that are made up of the same characters, but in a different order
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-    string s,r;
-    cin>>s>>r;
-    for(int i=0;i<s.length();i++){
-        for(int j=0;j<r.length();j++){
-            if(s[i]==r[j]){
-                r.erase(j,1);
-                break;
-            }
-        }
+
+int main() {
+    string s, r;
+    cin >> s >> r;
+
+    if(s.length() != r.length()){
+        cout << "False";
+        return 0;
     }
-    if(r.length()==0){
-        cout<<"True";
-    }
-    else{
-        cout<<"False";
-    }
+
+    sort(s.begin(), s.end());
+    sort(r.begin(), r.end());
+
+    if(s == r)
+        cout << "True";
+    else
+        cout << "False";
 }
 // Input...
-// Hello hello
-// False
+// silent listen
+// Output...
+// True
