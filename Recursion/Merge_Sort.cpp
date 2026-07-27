@@ -1,3 +1,4 @@
+//Time complexity is O(nlogn) and space complexity is O(n)
 #include <bits/stdc++.h>
 using namespace std;
 void merge(int arr[], int s, int e)
@@ -41,6 +42,9 @@ void merge(int arr[], int s, int e)
     while(idx2<len2){
          arr[k++]=second[idx2++];
     }
+
+    delete []first;
+    delete []second;
 }
 void mergeSort(int arr[], int s, int e)
 {
