@@ -30,9 +30,20 @@ int solve(string &s, int i, int j, vector<vector<int>> &dp)
 
     for(int k = i; k < j; k++)
     {
-        int left = solve(s, i, k, dp);
-        int right = solve(s, k + 1, j, dp);
+         int left, right;
 
+         //recursive call se phele dp check krlo taaki speed slow na ho
+        if(dp[i][k] != -1)      
+            left = dp[i][k];
+        else
+            left = solve(s, i, k, dp);
+
+        if(dp[k + 1][j] != -1)
+            right = dp[k + 1][j];
+        else
+            right = solve(s, k + 1, j, dp);
+
+        
         int temp = left + right + 1;
 
         mn = min(mn, temp);
